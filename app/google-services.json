@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "221331526051",
+    "firebase_url": "https://emprendedores-5a783.firebaseio.com",
+    "project_id": "emprendedores-5a783",
+    "storage_bucket": "emprendedores-5a783.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221331526051:android:37d7816278237a64",
+        "android_client_info": {
+          "package_name": "com.lash_azem.chepelocalguide"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221331526051-ujlvc63ami9f2nh4cu5fe7ih753h3ltu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxW2Ir9X-Jky70OylNFjGA_COG9bIA-oQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221331526051:android:10f6789177524a65",
+        "android_client_info": {
+          "package_name": "com.lash_azem.emprendedores"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221331526051-ujlvc63ami9f2nh4cu5fe7ih753h3ltu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxW2Ir9X-Jky70OylNFjGA_COG9bIA-oQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
