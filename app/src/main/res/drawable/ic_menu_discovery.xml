@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    >
+
+    <path
+        android:name="Rectangle"
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0"
+        android:pathData="M 0 0 H 24 V 24 H 0 V 0 Z" />
+    <path
+        android:name="Oval"
+        android:strokeColor="@color/ColorTextLightPrimary"
+        android:fillColor="#000000"
+        android:pathData="M11.8022557,20.3398693 C5.51861932,20.3398693 0.0728011337,12.1699346
+0.0728011337,12.1699346 C0.0728011337,12.1699346 5.09971022,4 11.8022557,4
+C18.5048011,4 23.1128011,12.1699346 23.1128011,12.1699346 C23.1128011,12.1699346
+18.085892,20.3398693 11.8022557,20.3398693 Z M11.5106196,15.5853367
+C13.2920693,15.5853367 14.7362196,13.9555464 14.7362196,11.945098
+C14.7362196,9.93464972 13.2920693,8.30485934 11.5106196,8.30485934
+C9.72916991,8.30485934 8.2850196,9.93464972 8.2850196,11.945098
+C8.2850196,13.9555464 9.72916991,15.5853367 11.5106196,15.5853367 Z" />
+</vector>
