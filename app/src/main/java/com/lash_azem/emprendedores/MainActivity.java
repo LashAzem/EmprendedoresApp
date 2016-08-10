@@ -1,31 +1,33 @@
 package com.lash_azem.emprendedores;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.lash_azem.emprendedores.Login.LoginActivity;
-import com.lash_azem.emprendedores.Login.SignupActivity;
-import com.lash_azem.emprendedores.R;
+import com.lash_azem.emprendedores.Login.ProfileActivity;
+import com.lash_azem.emprendedores.notifications.PushNotificationsActivity;
+import com.lash_azem.emprendedores.ui.fragment.LocalDetailFragment;
+import com.lash_azem.emprendedores.ui.fragment.LocalsFragment;
+import com.lash_azem.emprendedores.ui.fragment.RViewAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener{
 
-    private Button btnChangeEmail, btnChangePassword, btnSendResetEmail, btnRemoveUser,
-            changeEmail, changePassword, sendEmail, remove, signOut;
-
-    private EditText oldEmail, newEmail, password, newPassword;
-    private ProgressBar progressBar;
     private FirebaseAuth.AuthStateListener authListener;
     private FirebaseAuth auth;
 
@@ -33,10 +35,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(getString(R.string.title_activity_profile));
+        toolbar .getBackground().setAlpha(0);
         setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        //First start (Inbox Fragment)
+        setFragment(0);
 
 
         //get firebase auth instance
@@ -58,8 +71,76 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
 
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.home:
+                return true;
+            case R.id.action_user:
+                Intent intent = new Intent(this, ProfileActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+
+        int id = item.getItemId();
+
+        if (id == R.id.nav_feed) {
+            setFragment(0);
+        } else if (id == R.id.nav_profile) {
+            setFragment(1);
+        } else if (id == R.id.nav_notif) {
+            setFragment(2);
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+    public void setFragment(int position) {
+        FragmentManager fragmentManager;
+        FragmentTransaction fragmentTransaction;
+
+        switch (position) {
+            case 0:
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                LocalsFragment localsFragment = new LocalsFragment();
+                fragmentTransaction.replace(R.id.fragment, localsFragment);
+                fragmentTransaction.commit();
+                break;
+            case 1:
+                startActivity(new Intent(this, ProfileActivity.class));
+                break;
+            case 2:
+                startActivity(new Intent(this, PushNotificationsActivity.class));
+                break;
+        }
     }
 
 }
