@@ -20,6 +20,7 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -29,8 +30,12 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Login.ProfileActivity"
-            android:label="@string/title_activity_profile"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:label=""
+            android:theme="@style/AppTheme.NoActionBar">
+                <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".Login.SignupActivity"
             android:label="@string/title_activity_login"
@@ -38,7 +43,40 @@
         <activity
             android:name=".Login.ResetPasswordActivity"
             android:label="@string/title_activity_reset_password"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LocalListActivity"
+            android:label="Local"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".LocalDetailActivity"
+            android:label="@string/title_local_detail"
+            android:parentActivityName=".LocalListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.lash_azem.emprendedores.LocalListActivity" />
+        </activity>
+        <activity
+            android:name=".notifications.PushNotificationsActivity"
+            android:label="@string/title_activity_notifications"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
+        <service android:name=".fcm.IFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".fcm.IFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

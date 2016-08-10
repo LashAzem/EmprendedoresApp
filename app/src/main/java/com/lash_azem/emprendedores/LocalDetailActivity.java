@@ -46,7 +46,7 @@ public class LocalDetailActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {
-            navigateUpTo(new Intent(this, MainActivity.class));
+            navigateUpTo(new Intent(this, LocalListActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

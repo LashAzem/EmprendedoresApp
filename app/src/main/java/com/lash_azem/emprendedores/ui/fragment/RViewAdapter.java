@@ -81,12 +81,12 @@ public class RViewAdapter extends RecyclerView.Adapter<RViewAdapter.ViewHolder> 
         public ImageView mCover;
         //public final TextView mDetailView;
         public DummyItem mItem;
-        public final CardView cv;
+        //public final CardView cv;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            cv = (CardView)view.findViewById(R.id.cv);
+            //cv = (CardView)view.findViewById(R.id.cv);
             //mIdView = (TextView) view.findViewById(R.id.id);
             mContentView = (TextView) view.findViewById(R.id.content);
             mCover = (ImageView) view.findViewById(R.id.cover);

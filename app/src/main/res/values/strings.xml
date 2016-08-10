@@ -1,5 +1,19 @@
 <resources>
     <string name="app_name">Emprendedores</string>
+
+    <string name="title_activity_notifications">Notificaciones</string>
+    <string name="no_message_text">No hay ningúna notificación todavía</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="title_local_list">Locals</string>
+    <string name="title_local_detail">Local Detail</string>
+
+    <string name="explorer">EXPLORAR</string>
+    <string name="titleperfil">PERFIL</string>
+    <string name="notificaciones">NOTIFICACIONES</string>
+
     <string name="action_sign_in_short">Register</string>
     <string name="email">Email</string>
     <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
@@ -28,5 +42,9 @@
     <string name="btn_sign_out">Sign Out</string>
     <string name="lbl_forgot_password">Forgot password?</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
+    <string name="perfil">PERFIL</string>
+    <string name="name">Name</string>
+    <string name="imagelocaldetailfull">imagelocaldetailfull</string>
+    <string name="localdropimage">Localdropimage</string>
 
 </resources>

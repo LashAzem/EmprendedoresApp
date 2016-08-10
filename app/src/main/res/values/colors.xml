@@ -3,6 +3,9 @@
     <color name="colorPrimary">#dedede</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#82000000</color>
+    <color name="background">#dedede</color>
+    <color name="ColorTextPrimary">#444444</color>
+    <color name="ColorTextLightPrimary">#f9f9f9</color>
 
     <color name="bg_login">#26ae90</color>
     <color name="bg_register">#2e3237</color>

@@ -18,8 +18,21 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimaryDark"
-            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:elevation="0dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/perfil"
+            android:layout_gravity="center"
+            android:id="@+id/toolbar_title"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/abc_text_size_large_material"
+            android:singleLine="true" />
+
+        </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -31,8 +44,7 @@
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
         android:paddingTop="@dimen/activity_vertical_margin"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:scrollIndicators="right">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <EditText
             android:id="@+id/old_email"
