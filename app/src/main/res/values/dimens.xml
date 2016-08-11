@@ -12,4 +12,6 @@
     <dimen name="list_item_article_thumbnail">48dp</dimen>
     <dimen name="list_item_artile_vertical_margin">4dp</dimen>
     <dimen name="list_item_article_space">8dp</dimen>
+
+    <dimen name="universal_margin">16dp</dimen>
 </resources>
